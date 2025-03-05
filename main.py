@@ -1,6 +1,16 @@
 import streamlit as st
 import pandas as pd
 import plotly.graph_objects as go
+# Data visualization
+import matplotlib.pyplot as plt
+from matplotlib.collections import LineCollection
+from matplotlib.lines import Line2D
+import plotly
+import plotly.express as px
+import plotly.figure_factory as ff
+import plotly.graph_objects as go
+import plotly.io as pio
+from plotly.subplots import make_subplots
 import plotly.subplots
 import datetime as dt
 import numpy as np
