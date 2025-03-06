@@ -150,9 +150,9 @@ fig1.update_layout(
         dict(
             x=1, y=0.688,
             xref='paper', yref='paper',
-            text="<span style='color:#69DC5B'>% Stock Above MA20d</span><br>"
-                 "<span style='color:#526DFF'>% Stock Above MA60d</span><br>"
-                 "<span style='color:#E24C4C'>% Stock Above MA200d</span>",
+            text="<span style='color:#69DC5B'>% Stocks Above MA20d</span><br>"
+                 "<span style='color:#526DFF'>% Stocks Above MA60d</span><br>"
+                 "<span style='color:#E24C4C'>% Stocks Above MA200d</span>",
             showarrow=False,
             font=dict(size=12),
             align="left",
@@ -182,5 +182,17 @@ fig1.update_layout(
 )
 
 st.subheader("📊 SET Index Market Breadth Dashboard")
+import streamlit as st
+
+st.markdown(
+    '<p style="font-size:12px;">'
+    '<span style="color:#4CAF50;">% Stocks Above 20d</span> represents the percentage of stocks in the SET Index with a closing price above their 20-day simple moving average.<br>'
+    '<span style="color:#526DFF;">% Stocks Above 60d</span> represents the percentage of stocks in the SET Index with a closing price above their 60-day simple moving average.<br>'
+    '<span style="color:#E24C4C;">% Stocks Above 200d</span> represents the percentage of stocks in the SET Index with a closing price above their 200-day simple moving average.'
+    '</p>', 
+    unsafe_allow_html=True
+)
+
+
 st.plotly_chart(fig1, use_container_width=True)
-st.sidebar.write("Created by Your Name")
+st.sidebar.write("Created by Samapan Thongmee")
