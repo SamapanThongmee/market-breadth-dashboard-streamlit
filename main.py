@@ -182,7 +182,6 @@ fig1.update_layout(
 )
 
 st.subheader("📊 SET Index Market Breadth Dashboard")
-import streamlit as st
 
 st.markdown(
     '<p style="font-size:12px;">'
@@ -193,6 +192,15 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+st.markdown(
+    '''
+    <p style="font-size:12px;">
+    <span style="color:#69DC5B;"><b>McClellan Oscillator</b></span> represents the difference between the 10% and 5% exponential moving averages (EMAs) of daily market breadth, indicating short-term market momentum and overbought/oversold conditions.<br>
+    <span style="color:#27AE60;"><b>McClellan Summation Index</b></span> represents the cumulative sum of the McClellan Oscillator, used for intermediate- to long-term analysis of market direction and strength.
+    </p>
+    ''', 
+    unsafe_allow_html=True
+)
 
 st.plotly_chart(fig1, use_container_width=True)
 st.sidebar.write("Created by Samapan Thongmee")
