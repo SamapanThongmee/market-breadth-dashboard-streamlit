@@ -17,7 +17,7 @@ import numpy as np
 import math
 
 # Set Streamlit page config
-st.set_page_config(page_title="Stock Market Breadth Dashboard", layout="wide")
+st.set_page_config(page_title="SET Index Market Breadth", layout="wide")
 
 # Public Google Sheet URL
 GOOGLE_SHEET_URL = "https://docs.google.com/spreadsheets/d/1w4tM7NxXL2PFm95V0QW3H3WJ1togISgxPUKZyTLnv4c/edit#gid=0"
@@ -51,7 +51,7 @@ dt_obs = [d for d in pd.to_datetime(df['Date'])]
 dt_breaks = [d.strftime("%Y-%m-%d") for d in dt_all if d not in dt_obs]
 
 # Initialize Plotly Figure
-fig1 = plotly.subplots.make_subplots(rows=4, cols=1, shared_xaxes=True,
+fig1 = plotly.subplots.make_subplots(rows=4, cols=1, shared_xaxes=False,
                                      vertical_spacing=0.025,
                                      row_heights=[0.4, 0.3, 0.3, 0.3])
 
@@ -61,7 +61,7 @@ fig1.add_trace(go.Candlestick(x=df['Date'],
                               high=df['High'],
                               low=df['Low'],
                               close=df['Close'],
-                              name='Stock Index'),
+                              name='SET Index'),
                row=1, col=1)
 
 # Moving Averages
@@ -92,8 +92,8 @@ fig1.update_layout(height=900, width=1200,
                    showlegend=True)
 
 # Streamlit Plot
-st.subheader("📊 Market Breadth Dashboard")
+st.subheader("📊 Stock Index  Market Breadth Dashboard")
 st.plotly_chart(fig1, use_container_width=True)
 
 # Footer
-st.sidebar.write("Powered by Google Sheets & Streamlit")
+st.sidebar.write("Created by Samapan Thongmee")
