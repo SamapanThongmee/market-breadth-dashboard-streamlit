@@ -92,14 +92,14 @@ max_val = math.ceil(df.tail(365)['High'].max() / interval) * interval
 fig1.update_yaxes(
     tickmode='array', 
     tickvals=list(range(min_val, max_val + interval, interval)), 
-    title="Price",
+    title="SET Index",
     row=1, col=1
 )
 
 # Add y-axis titles to each subplot
 fig1.update_yaxes(title="Moving Averages", row=2, col=1)
-fig1.update_yaxes(title="Oscillator", row=3, col=1)
-fig1.update_yaxes(title="Summation Index", row=4, col=1)
+fig1.update_yaxes(title="McClellan Oscillator", row=3, col=1)
+fig1.update_yaxes(title="McClellan Summation Index", row=4, col=1)
 
 # Layout Customization
 fig1.update_layout(
